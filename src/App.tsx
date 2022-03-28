@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FunctionComponent,useEffect, useState, useContext } from 'react'
 
-function App() {
+import './App.css';
+import { ContactList, Sidebar } from './components'
+import { ContactsData, ContactsProps } from './types';
+import MainContent from './components/MainContent';
+import useContactData from './api-hook';
+
+export interface AppProps extends ContactsProps {}
+
+const App: FunctionComponent = () => {
+  const [dataStatus, contacts, getData] = useContactData()
+
+  useEffect(() => {
+    getData()
+  }, [contacts])
+
+ 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <div style={{display: 'flex'}}> 
+    <Sidebar title="Contacts">
+      {
+      contacts?.map((contact) => <ContactList name={contact.name}  />)
+      }
+      
+    </Sidebar>
+    <MainContent name={''} email={''} mobile={''} />
+
+</div>
+)
+
 }
 
 export default App;

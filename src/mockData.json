@@ -1,0 +1,32 @@
+[
+{   
+    "id": "1",
+    "name": "Anita",
+    "email": "xyz@gmial.com",
+    "mobile": "7678765489"
+},
+{   
+    "id": "2",
+    "name": "Mike",
+    "email": "xyz@gmial.com",
+    "mobile": "767987658"
+},
+{   
+    "id": "3",
+    "name": "John",
+    "email": "xyz@gmial.com",
+    "mobile": "7678765409"
+},
+{   
+    "id": "4",
+    "name": "Josh",
+    "email": "xyz@gmial.com",
+    "mobile": "76787687754"
+},
+{   
+    "id": "5",
+    "name": "Ezra",
+    "email": "xyz@gmial.com",
+    "mobile": "76787654"
+}
+]
