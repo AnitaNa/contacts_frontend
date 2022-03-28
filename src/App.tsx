@@ -15,8 +15,6 @@ const App: FunctionComponent = () => {
     getData()
   }, [contacts])
 
- 
-
   return (
     <div style={{display: 'flex'}}> 
     <Sidebar title="Contacts">
