@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import {  DataStatus, ContactsProps } from './types';
 import mockData from './mockData.json';
+import axios from 'axios';
 
 const useContactData = () => {
     const [dataStatus, setDataStatus] = useState<DataStatus>();
@@ -10,7 +11,9 @@ const useContactData = () => {
     const getData = async () => {
             setDataStatus(DataStatus.LOADING)
         try {
-            setContacts(mockData)
+            const res = await axios.get<ContactsProps[]>('http://localhost:3300')
+            const resData = res.data
+            setContacts(resData)
             setDataStatus(DataStatus.SUCCESS)
         }
         catch(err){

@@ -4,7 +4,7 @@ import { CSSProps } from "../types";
 
 interface ContactListProps  {
     name: string;
-    onNameClick?: () => void;
+    onNameClick?: Function
     remove?: () => void;
 }
 
@@ -14,7 +14,7 @@ const ContactList: FunctionComponent<ContactListProps> = ({
 }) => {
     return (
         <div style={contactWrapper}>
-            <span style={deleteBtn} onClick={onNameClick}>{name}</span>
+            <span style={deleteBtn} onClick={() => onNameClick}>{name}</span>
             <button style={deleteBtn}>Delete</button>
          </div>
     )

@@ -5,21 +5,20 @@ import { ContactsProps, CSSProps } from '../types'
 export interface SidebarProps {
     title?: string;
     children: ReactNode;
-    contacttHandler?: () => void;
+    addHandler?: (id: string | number) => void;
     deleteContact?: () => void;
 }
 
 const Sidebar: FunctionComponent<SidebarProps> = ({
     title,
     children,
-    contacttHandler,
+    addHandler,
     deleteContact,
 }) => {
     return (
        <div style={sidebarWrapper}>
-            <h3>{title}</h3>
+            <h3 onClick={() => addHandler}>{title}</h3>
             {children}
-            <button>Add Contact</button>
        </div>
     )
 }

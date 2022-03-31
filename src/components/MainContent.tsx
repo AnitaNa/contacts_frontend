@@ -3,7 +3,7 @@ import { FunctionComponent } from "react";
 export interface MainContentProps{
    name: string;
    email: string;
-   mobile: string;
+   mobile?: string;
 }
 
 const MainContent: FunctionComponent<MainContentProps> = ({
@@ -13,7 +13,9 @@ const MainContent: FunctionComponent<MainContentProps> = ({
 }) => {
     return (
        <div>
-        
+          <p>{name}</p>
+          <p>{email}</p>
+          <p>{mobile}</p>
        </div>
     )
 }

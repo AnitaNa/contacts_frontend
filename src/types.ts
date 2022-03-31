@@ -10,7 +10,7 @@ export interface ContactsProps {
     id?: string;
     name: string;
     email: string;
-    mobile?: string;
+    mobile: string;
 }
 
 export interface ContactsData {
